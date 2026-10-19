@@ -274,15 +274,8 @@ static void drawDisplay() {
     display.drawBox(93, 39, width, 4);
   }
 
-  // Six indicators show which physical lamps are enabled; the outlined
-  // indicator is the lamp currently being edited.
-  for (uint8_t i = 0; i < LED_COUNT; ++i) {
-    const uint8_t x = 7 + i * 20;
-    if (lampEnabled[i]) display.drawDisc(x + 3, 52, 3);
-    if (i == selectedLamp) display.drawFrame(x - 2, 46, 11, 12);
-  }
-
-  display.drawStr(0, 63, "UP/DN LAMP  LT/RT LEVEL  A COLOR  B POWER");
+  display.drawStr(0, 55, "U/D LAMP   L/R LEVEL");
+  display.drawStr(0, 63, "A COLOR    B POWER");
   display.sendBuffer();
 }
 
